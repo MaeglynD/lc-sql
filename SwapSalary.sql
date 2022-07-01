@@ -8,8 +8,9 @@ insert into Salary (id, name, sex, salary) values ('4', 'D', 'f', '500');
 -- END SCHEMA --
 
 UPDATE Salary
-SET sex = CASE 
-            WHEN sex = 'f' 
-            THEN 'm' 
-            ELSE 'f' 
-          END;
+SET sex = 
+  CASE 
+    WHEN sex = 'f' 
+    THEN 'm' 
+    ELSE 'f' 
+  END;
