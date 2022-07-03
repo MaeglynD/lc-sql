@@ -12,6 +12,7 @@ insert into Logins (user_id, time_stamp) values ('14', '2019-07-14 09:00:00');
 insert into Logins (user_id, time_stamp) values ('14', '2021-01-06 11:59:59');
 -- END SCHEMA --
 
+-- Postgres
 SELECT
   user_id,
   MAX(time_stamp) AS last_stamp
@@ -19,5 +20,16 @@ FROM
   Logins
 WHERE
   DATE_PART('year', time_stamp) = '2020'
+GROUP BY
+  user_id;
+
+-- MySql
+SELECT
+  user_id,
+  MAX(time_stamp) AS last_stamp
+FROM
+  Logins
+WHERE
+  YEAR(time_stamp) = '2020'
 GROUP BY
   user_id;
